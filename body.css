@@ -1,0 +1,92 @@
+body {
+    background: linear-gradient(179.4deg, rgb(4, 1, 1) -16.9%, rgb(71, 30, 84) 119.9%);
+    background-size: 200% 200%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    animation: gradientShift 20s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.floating-button {
+    position: fixed;
+    bottom: 13px;
+    right: 13px;
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-button img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.floating-button:hover {
+    transform: scale(1.1);
+}
+
+
+@keyframes floatIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+nav {
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1000;
+    opacity: 0;
+    animation: navSlideDown 1s ease forwards;
+}
+
+@keyframes navSlideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.heading-container {
+    margin: 20px;
+    padding-left: 20px;
+    opacity: 0;
+    animation: textSlideUp 1s ease forwards 0.5s;
+}
+
+@keyframes textSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
